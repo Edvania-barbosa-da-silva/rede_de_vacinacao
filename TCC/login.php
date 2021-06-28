@@ -37,7 +37,7 @@
                      <button type="submit" name="btn">Login</button>
                 </div>
                 <div>
-                    <p><a href="http://localhost/TCC/cadastro.php">Criar conta</a></p>
+                    <p><a href="cadastro.php">Criar conta</a></p>
                 </div>
 
                 <?php
@@ -58,6 +58,13 @@
                            header("Refresh: 2; login.php"); 
                            echo '<p class="saiu">Atualizado com sucesso! Agora faça o login!</p>';
                         }     
+                    }
+                    if(isset($_GET["pg"])){
+                        $pg =$_GET["pg"];
+                        if($pg == "deletar"){
+                            header("Refresh: 2; login.php");
+                            echo '<p class="saiu">Você deletou seu contado :(</p>';
+                        }
                     }
                      if(isset($_GET["page"])){
                         $parametro = $_GET["page"];
